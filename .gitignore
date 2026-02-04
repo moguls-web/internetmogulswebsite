@@ -12,8 +12,7 @@
 /build
 
 # Videos
-*.mp4
-public/**/*.mp4
+
 
 
 # env files (can opt-in for committing if needed)
