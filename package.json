@@ -5,6 +5,7 @@
   "packageManager": "pnpm@9.14.2",
   "scripts": {
     "dev": "next dev",
+    "install:frozen": "npx pnpm@9 install --frozen-lockfile --prefer-offline",
     "build": "next build",
     "start": "node server.js",
     "start:prod": "NODE_ENV=production node server.js",
