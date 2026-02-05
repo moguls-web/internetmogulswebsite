@@ -17,7 +17,7 @@ import { RevenueStripe } from "@/components/revenue-stripe"
 import { CTASection } from "@/components/cta-section"
 import ClientLogo from "@/components/ClientLogo"
 import { services } from "@/data/serviceData"
-
+import { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Hotel Digital Marketing | Internet Moguls - Hospitality Digital Marketing Company in Delhi, India",
   description:

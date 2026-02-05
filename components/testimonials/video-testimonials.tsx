@@ -16,7 +16,7 @@ const videoTestimonials = [
       "Internet Moguls transformed our digital presence completely. Our direct bookings increased by 180% in just 6 months.",
     thumbnail: "/MVaSOUU6gI8-HD-img.jpg?height=1000&width=600",
     featured: true,
-    videoUrl: "/Best_digital_marketing_agency_in_india_-_Internet_Moguls_Taj_Hari_Mahal_Jodhpur_720P.mp4", // Add video URL here
+    videoUrl: "https://cdn.mogulsl.com/im/Best_digital_marketing_agency_in_india_-_Internet_Moguls_Taj_Hari_Mahal_Jodhpur_720P.mp4", // Add video URL here
     videoType: "video" as "youtube" | "video" | "iframe",
   },
   {
@@ -27,7 +27,7 @@ const videoTestimonials = [
     location: "New Delhi, India",
     quote: "The ROI we've seen from their campaigns is unprecedented in our 30-year history.",
     thumbnail: "/hotel-sales-director-woman-professional-testimonia.jpg",
-    videoUrl: "/testimonials-video/IM-Fortune.mp4",
+    videoUrl: "https://cdn.mogulsl.com/im/testimonials-video/IM-Fortune.mp4",
     videoType: "video" as "youtube" | "video" | "iframe",
   },
   {
@@ -38,7 +38,7 @@ const videoTestimonials = [
     location: "India",
     quote: "They understand the hospitality industry like no other agency.",
     thumbnail: "/boutique-hotel-owner-man-professional-testimonial.jpg",
-    videoUrl: "/testimonials-video/IM-Shivavilas.mp4",
+    videoUrl: "https://cdn.mogulsl.com/im/testimonials-video/IM-Shivavilas.mp4",
     videoType: "video" as "youtube" | "video" | "iframe",
   },
   {
@@ -49,7 +49,7 @@ const videoTestimonials = [
     location: "Datchet, United Kingdom",
     quote: "Our social media engagement went from hundreds to millions.",
     thumbnail: "/hotel-chain-ceo-woman-professional-testimonial.jpg",
-    videoUrl: "/testimonials-video/Manor.mp4",
+    videoUrl: "https://cdn.mogulsl.com/im/testimonials-video/Manor.mp4",
     videoType: "video" as "youtube" | "video" | "iframe",
   },
   {
@@ -60,7 +60,7 @@ const videoTestimonials = [
     location: "Kathmandu, Nepal",
     quote: "International expertise with local understanding. A rare combination.",
     thumbnail: "/middle-eastern-hotel-director-man-professional-tes.jpg",
-    videoUrl: "/testimonials-video/MrSachin-Royal-Tulip-Nepal.mp4",
+    videoUrl: "https://cdn.mogulsl.com/im/testimonials-video/MrSachin-Royal-Tulip-Nepal.mp4",
     videoType: "video" as "youtube" | "video" | "iframe",
   },
   {
@@ -71,7 +71,7 @@ const videoTestimonials = [
     location: "Okhla - Delhi",
     quote: "The creative team exceeded all our expectations.",
     thumbnail: "/asian-hotel-marketing-director-woman-professional-.jpg",
-    videoUrl: "/testimonials-video/Sandy-Tower.mp4",
+    videoUrl: "https://cdn.mogulsl.com/im/testimonials-video/Sandy-Tower.mp4",
     videoType: "video" as "youtube" | "video" | "iframe",
   },
   {
@@ -82,7 +82,7 @@ const videoTestimonials = [
     location: "Goa, India",
     quote: "Professionalism and results. That's what they deliver.",
     thumbnail: "/european-hotel-manager-man-professional-testimonia.jpg",
-    videoUrl: "/testimonials-video/Yatin-Hardrock.mp4",
+    videoUrl: "https://cdn.mogulsl.com/im/testimonials-video/Yatin-Hardrock.mp4",
     videoType: "video" as "youtube" | "video" | "iframe",
   },
 ]

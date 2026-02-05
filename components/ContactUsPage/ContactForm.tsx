@@ -96,7 +96,7 @@ const contactFormSchema = z.object({
   bookingSource: z.string().min(1, 'This field is required'),
   banquetEnquiries: z.string().min(1, 'This field is required'),
   restaurantDiscoverable: z.string().min(1, 'This field is required'),
-  otherChallenges: z.string().min(1, 'Any other challenges is required'),
+  otherChallenges: z.string().optional(),
 })
 
 // Base schema for common fields
@@ -565,7 +565,7 @@ const ContactForm = () => {
       email: '',
       countryCode: '+91', // Default to India
       mobile: '',
-      website: '',
+      website: 'https://',
       company: '',
       city: '',
       numberOfRooms: '',
@@ -620,7 +620,7 @@ const ContactForm = () => {
         email: '',
         countryCode: '+91',
         mobile: '',
-        website: '',
+        website: 'https://',
         company: '',
         city: '',
         numberOfRooms: '',
@@ -862,7 +862,7 @@ const ContactForm = () => {
     }
   }
   return (
-    <div className="w-full py-16 lg:py-24 px-6 lg:px-8 bg-white">
+    <div className="w-full py-16 lg:py-24 px-6 lg:px-8 bg-white" id="form-section">
       <div className="container max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
           {/* Left Column - Form (2/3 width) */}
@@ -1187,7 +1187,7 @@ const ContactForm = () => {
                   name="otherChallenges"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Any other challenges <span className="text-red-500">*</span></FormLabel>
+                      <FormLabel>Any other challenges</FormLabel>
                       <FormControl>
                         <Textarea placeholder="Any other challenges" {...field} />
                       </FormControl>

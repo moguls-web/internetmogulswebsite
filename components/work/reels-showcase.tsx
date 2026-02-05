@@ -11,7 +11,7 @@ const reels = [
     hotel: "Taj Lake Palace",
     thumbnail: "/reels/reels-thumbail/1.jpg?height=1000&width=600",
     duration: "0:45",
-    videoUrl: "/reels/1.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
+    videoUrl: "https://cdn.mogulsl.com/im/reels/1.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
     videoType: "youtube" as "youtube" | "video" | "iframe", // or "video" for HTML5 video, "iframe" for custom embed
   }, 
   
@@ -21,7 +21,7 @@ const reels = [
     hotel: "Taj Lake Palace",
     thumbnail: "/reels/reels-thumbail/5.jpg?height=1000&width=600",
     duration: "0:45",
-    videoUrl: "/reels/2.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
+    videoUrl: "https://cdn.mogulsl.com/im/reels/2.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
     videoType: "youtube" as "youtube" | "video" | "iframe", // or "video" for HTML5 video, "iframe" for custom embed
   }, 
   
@@ -31,7 +31,7 @@ const reels = [
     hotel: "Taj Lake Palace",
     thumbnail: "/reels/reels-thumbail/6.jpg?height=1000&width=600",
     duration: "0:45",
-    videoUrl: "/reels/3.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
+    videoUrl: "https://cdn.mogulsl.com/im/reels/3.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
     videoType: "youtube" as "youtube" | "video" | "iframe", // or "video" for HTML5 video, "iframe" for custom embed
   }, 
   
@@ -41,7 +41,7 @@ const reels = [
     hotel: "Taj Lake Palace",
     thumbnail: "/reels/reels-thumbail/7.jpg?height=1000&width=600",
     duration: "0:45",
-    videoUrl: "/reels/4.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
+    videoUrl: "https://cdn.mogulsl.com/im/reels/4.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
     videoType: "youtube" as "youtube" | "video" | "iframe", // or "video" for HTML5 video, "iframe" for custom embed
   }, 
   
@@ -51,7 +51,7 @@ const reels = [
     hotel: "Taj Lake Palace",
     thumbnail: "/reels/reels-thumbail/8.jpg?height=1000&width=600",
     duration: "0:45",
-    videoUrl: "/reels/5.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
+    videoUrl: "https://cdn.mogulsl.com/im/reels/5.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
     videoType: "youtube" as "youtube" | "video" | "iframe", // or "video" for HTML5 video, "iframe" for custom embed
   }, 
 
@@ -61,7 +61,7 @@ const reels = [
     hotel: "Taj Lake Palace",
     thumbnail: "/reels/reels-thumbail/10.jpg?height=1000&width=600",
     duration: "0:45",
-    videoUrl: "/reels/9.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
+    videoUrl: "https://cdn.mogulsl.com/im/reels/9.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
     videoType: "youtube" as "youtube" | "video" | "iframe", // or "video" for HTML5 video, "iframe" for custom embed
   }, 
   {
@@ -70,7 +70,7 @@ const reels = [
     hotel: "Taj Lake Palace",
     thumbnail: "/reels/reels-thumbail/11.jpg?height=1000&width=600",
     duration: "0:45",
-    videoUrl: "/reels/10.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
+    videoUrl: "https://cdn.mogulsl.com/im/reels/10.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
     videoType: "youtube" as "youtube" | "video" | "iframe", // or "video" for HTML5 video, "iframe" for custom embed
   }, 
   {
@@ -79,7 +79,7 @@ const reels = [
     hotel: "Taj Lake Palace",
     thumbnail: "/reels/reels-thumbail/12.jpg?height=1000&width=600",
     duration: "0:45",
-    videoUrl: "/reels/11.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
+    videoUrl: "https://cdn.mogulsl.com/im/reels/11.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
     videoType: "youtube" as "youtube" | "video" | "iframe", // or "video" for HTML5 video, "iframe" for custom embed
   }, 
 
@@ -89,7 +89,7 @@ const reels = [
     hotel: "Taj Lake Palace",
     thumbnail: "/reels/reels-thumbail/13.jpg?height=1000&width=600",
     duration: "0:45",
-    videoUrl: "/reels/12.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
+    videoUrl: "https://cdn.mogulsl.com/im/reels/12.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
     videoType: "youtube" as "youtube" | "video" | "iframe", // or "video" for HTML5 video, "iframe" for custom embed
   }, 
   {
@@ -98,7 +98,7 @@ const reels = [
     hotel: "Taj Lake Palace",
     thumbnail: "/reels/reels-thumbail/14.jpg?height=1000&width=600",
     duration: "0:45",
-    videoUrl: "/reels/13.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
+    videoUrl: "https://cdn.mogulsl.com/im/reels/13.mp4", // Add video URL here (YouTube embed URL, video file path, or iframe src)
     videoType: "youtube" as "youtube" | "video" | "iframe", // or "video" for HTML5 video, "iframe" for custom embed
   }, 
 

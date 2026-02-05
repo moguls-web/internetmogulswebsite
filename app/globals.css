@@ -20,7 +20,6 @@
   font-display: swap;
 }
 
-
 :root {
   --background: oklch(0.99 0 0);
   --foreground: oklch(0.12 0 0);

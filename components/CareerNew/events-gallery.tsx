@@ -10,7 +10,7 @@ const events = [
     title: "Office Party 2025", 
     image: "/reels/reels-thumbail/2.jpg",
     color: "bg-[#00C9A7]",
-    videoUrl: "/MogulVideo-1.mp4", // Add video URL here
+    videoUrl: "https://cdn.mogulsl.com/im/MogulVideo-1.mp4", // Add video URL here
     videoType: "video" as "youtube" | "video" | "iframe",
   },
   {
@@ -18,7 +18,7 @@ const events = [
     title: "Poojan", 
     image: "/reels/reels-thumbail/3.jpg",
     color: "bg-[#FFB800]",
-    videoUrl: "/MogulVideo-2.mp4", // Add video URL here
+    videoUrl: "https://cdn.mogulsl.com/im/MogulVideo-2.mp4", // Add video URL here
     videoType: "video" as "youtube" | "video" | "iframe",
   },
   {
@@ -26,7 +26,7 @@ const events = [
     title: "Diwali Party 2025", 
     image: "/reels/reels-thumbail/4.jpg",
     color: "bg-[#4D9FFF]",
-    videoUrl: "/MogulVideo-3.mp4", // Add video URL here
+    videoUrl: "https://cdn.mogulsl.com/im/MogulVideo-3.mp4", // Add video URL here
     videoType: "video" as "youtube" | "video" | "iframe",
   },  
   {
@@ -34,7 +34,7 @@ const events = [
     title: "Bollywood Night 2025", 
     image: "/reels/reels-thumbail/9.jpg",
     color: "bg-[#4D9FFF]",
-    videoUrl: "/MogulVideo-4.mp4", // Add video URL here
+    videoUrl: "https://cdn.mogulsl.com/im/MogulVideo-4.mp4", // Add video URL here
     videoType: "video" as "youtube" | "video" | "iframe",
   }, 
 ]

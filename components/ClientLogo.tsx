@@ -25,7 +25,7 @@ const ClientLogo = () => {
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12">
             <div>
               <p className="text-sm tracking-[0.3em] uppercase text-black mb-3">Trusted By 1900+ Hotels Worldwide</p>
-              <h2 className="font-serif text-4xl lg:text-6xl text-background leading-tight mb-6 text-black">From boutique resorts<br/> to <em>global</em> chains</h2>
+              <h2 className="font-serif text-4xl lg:text-6xl leading-tight mb-6 text-black">From boutique resorts<br/> to <em>global</em> chains</h2>
             </div>
             
           </div>

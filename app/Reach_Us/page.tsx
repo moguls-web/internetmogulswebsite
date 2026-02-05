@@ -3,7 +3,7 @@ import PageBanner from '@/components/PageBanner'
 import ContactForm from '@/components/ContactUsPage/ContactForm'
 import { LocationsSection } from '@/components/locations-section'
 import { GoogleMapSection } from '@/components/ContactUsPage/GoogleMapSection'
-
+import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: "Official Contact Information - Internet Moguls",
   description: "To contact us, Call +91 8826104440 or email us at rajesh@internetmoguls.com, Mailing address- 14, Second Floor, Local Shopping Complex, Pushpa Bhavan, New Delhi - 110062",

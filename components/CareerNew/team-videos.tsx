@@ -10,7 +10,7 @@ const videos = [
     title: "Be a Mogul",
     thumbnail: "/0A3A1224.webp", 
     color: "bg-[#00C9A7]",
-    videoUrl: "/workwithus-video.mp4", // Add video URL here
+    videoUrl: "https://cdn.mogulsl.com/im/workwithus-video.mp4", // Add video URL here
     videoType: "video" as "youtube" | "video" | "iframe",
   }, 
 ]

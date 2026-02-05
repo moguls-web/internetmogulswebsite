@@ -13,7 +13,7 @@ export function TestimonialsSection() {
       role: "Chairman Royal Orchid hotels",
       hotel: "Royal Orchid Hotels",
       image: "/indian-businessman-portrait-professional-headshot-.jpeg",
-      videoUrl: "/balji.mp4", // Add video URL here
+      videoUrl: "https://cdn.mogulsl.com/im/balji.mp4", // Add video URL here
       videoType: "video" as "youtube" | "video" | "iframe",
     },
     {
@@ -23,7 +23,7 @@ export function TestimonialsSection() {
       role: "Director",
       hotel: "Leisure Hotels Group",
       image: "/professional-portrait-corporate-headshot-hot.jpeg",
-      videoUrl: "/VibhasPrasad.mp4", // Add video URL here
+      videoUrl: "https://cdn.mogulsl.com/im/VibhasPrasad.mp4", // Add video URL here
       videoType: "video" as "youtube" | "video" | "iframe",
     },
     {
@@ -33,7 +33,7 @@ export function TestimonialsSection() {
       role: "General Manager",
       hotel: "Jai Mahal Palace",
       image: "/Deg8ISkVwAAQHhv.jpg",
-      videoUrl: "/Unlocking_the_secrets_to_sustainable_success_Jai_Mahal_Palace_s_journey_with_Internet_Moguls_720P.mp4", // Add video URL here
+      videoUrl: "https://cdn.mogulsl.com/im/Unlocking_the_secrets_to_sustainable_success_Jai_Mahal_Palace_s_journey_with_Internet_Moguls_720P.mp4", // Add video URL here
       videoType: "video" as "youtube" | "video" | "iframe",
     },
     {
@@ -43,7 +43,7 @@ export function TestimonialsSection() {
       role: "Managing Director and Co-Founder",
       hotel: "7 Apple Hotels and Resorts",
       image: "/manoj-7apple.jpg",
-      videoUrl: "/7Apple-Videos-2.mp4", // Add video URL here
+      videoUrl: "https://cdn.mogulsl.com/im/7Apple-Videos-2.mp4", // Add video URL here
       videoType: "video" as "youtube" | "video" | "iframe",
     },
      

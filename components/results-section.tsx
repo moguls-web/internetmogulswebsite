@@ -136,7 +136,7 @@ export function ResultsSection() {
   ]
 
   const [isPlaying, setIsPlaying] = useState(false)
-  const videoUrl: string = "/im-video.mp4" // Add video URL here
+  const videoUrl: string = "https://cdn.mogulsl.com/im/im-video.mp4" // Add video URL here
   const videoType = "video" as "youtube" | "video" | "iframe"
 
   return (

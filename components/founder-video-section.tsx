@@ -99,7 +99,7 @@ export function FounderVideoSection() {
             {/* Replace with actual video embed */}
             <div className="w-full h-full flex items-center justify-center text-white/60">
               <div className="text-center">
-                <video src="/avi-sir.mp4" className="w-full h-full object-cover" controls></video>
+                <video src="https://cdn.mogulsl.com/im/avi-sir.mp4" className="w-full h-full object-cover" controls autoPlay playsInline></video>
               </div>
             </div>
           </div>

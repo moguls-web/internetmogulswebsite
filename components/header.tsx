@@ -23,7 +23,7 @@ export function Header() {
       { label: "Solutions", href: "/services" },
       { label: "Case Studies", href: "/case-studies" },        
       { label: "Testimonials", href: "/testimonials" }, 
-      { label: "Contact Us", href: "/Reach_Us" },
+      { label: "Contact Us", href: "/Reach_Us#form-section" },
     ],
     []
   )
@@ -133,7 +133,7 @@ export function Header() {
             })}
 
             <Link
-              href="/Reach_Us"
+              href="/Reach_Us#form-section"
               className="text-sm tracking-wide px-5 py-2.5 bg-foreground text-background hover:bg-foreground/90 transition-colors"
             >
               Book a Call
