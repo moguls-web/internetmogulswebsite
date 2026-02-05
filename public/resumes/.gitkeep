@@ -1,3 +1,0 @@
-# This file ensures the resumes directory is tracked in git
-# Actual resume files are excluded via .gitignore
-
