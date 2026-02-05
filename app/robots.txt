@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: http://internetmoguls.com/sitemap.xml
