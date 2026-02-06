@@ -1,32 +1,16 @@
-# Railway deployment – fix “pnpm” / lockfile error
+# Railway – fix pnpm / lockfile error
 
-This project uses **npm** only (no pnpm). If Railway runs `pnpm install`, the build will fail.
+This repo uses **npm only**. Railway must use the **Dockerfile** so it runs `npm ci`, not pnpm.
 
-## Fix in Railway Dashboard
+## In Railway dashboard (required)
 
-Do **one** of the following.
+1. Open [Railway](https://railway.app) → your project → **this service**.
+2. Go to **Settings** → **Build**.
+3. Set **Root Directory** to **empty** or **`.`** (repo root).  
+   If this is wrong, Railway won’t see the Dockerfile.
+4. Set **Builder** to **DOCKERFILE** (not Railpack / Nixpacks).
+5. **Save**.
+6. Go to **Deployments** → **Redeploy** (or push a new commit).
 
-### Option A – Use Dockerfile (recommended)
-
-1. Open your project on [Railway](https://railway.app).
-2. Select the **service** that deploys this repo.
-3. Go to **Settings** → **Build**.
-4. Set **Builder** to **DOCKERFILE** (not Nixpacks / Railpack).
-5. Set **Dockerfile path** to `Dockerfile` (or leave default).
-6. **Redeploy** (Deployments → ⋮ → Redeploy, or push a new commit).
-
-The Dockerfile runs `npm ci` and `npm run build`; it never uses pnpm.
-
-### Option B – Force install command (if you keep Nixpacks/Railpack)
-
-1. In the same service, go to **Variables**.
-2. Add a variable:
-   - **Name:** `RAILPACK_INSTALL_CMD`
-   - **Value:** `npm ci`
-3. **Redeploy**.
-
-That makes the install step use `npm ci` instead of pnpm.
-
----
-
-After this, new deployments should no longer run `pnpm install --frozen-lockfile` and the lockfile error should stop.
+After this, the build should use the Dockerfile and the pnpm error should stop.  
+If it still uses pnpm, the builder or root directory in the dashboard is overriding the repo config.

@@ -1,0 +1,7 @@
+# Force Railway to use Dockerfile (npm ci) - do NOT use Railpack/pnpm
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "node server.js"
