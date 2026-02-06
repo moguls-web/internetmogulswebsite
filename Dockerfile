@@ -3,9 +3,9 @@ FROM node:22-alpine AS base
 
 WORKDIR /app
 
-# 1. Copy package files and install with pnpm 9 (bypasses Railway's old pnpm)
-COPY package.json pnpm-lock.yaml ./
-RUN npm run install:frozen
+# 1. Copy package files and install with npm (works everywhere)
+COPY package.json package-lock.json ./
+RUN npm ci
 
 # 2. Copy app and build
 COPY . .

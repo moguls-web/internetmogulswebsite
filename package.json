@@ -2,13 +2,8 @@
   "name": "my-v0-project",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@8.15.9",
-  "engines": {
-    "pnpm": ">=8"
-  },
   "scripts": {
     "dev": "next dev",
-    "install:frozen": "npx pnpm@9 install --frozen-lockfile --prefer-offline",
     "build": "next build",
     "start": "node server.js",
     "start:prod": "NODE_ENV=production node server.js",
