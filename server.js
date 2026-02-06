@@ -31,9 +31,11 @@ app.prepare().then(() => {
       res.statusCode = 500
       res.end('Internal Server Error')
     }
-  }).listen(port, (err) => {
+  }).listen(port, '0.0.0.0', (err) => {
     if (err) throw err
-    console.log(`> Server listening at http://localhost:${port} as ${dev ? 'development' : 'production'}`)
-
+    console.log(`> Server listening on port ${port} (${dev ? 'development' : 'production'})`)
   })
+}).catch((err) => {
+  console.error('Failed to start server:', err)
+  process.exit(1)
 })
