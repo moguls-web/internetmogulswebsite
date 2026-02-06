@@ -1,0 +1,6 @@
+# Force npm (no pnpm) when Nixpacks is used
+[phases.install]
+cmds = ["npm ci"]
+
+[phases.build]
+cmds = ["npm run build"]

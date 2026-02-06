@@ -2,7 +2,7 @@
   "$schema": "https://schema.railpack.com",
   "steps": {
     "install": {
-      "commands": ["npm run install:frozen"]
+      "commands": ["npm ci"]
     }
   }
 }
