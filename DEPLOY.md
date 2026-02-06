@@ -1,11 +1,14 @@
-# Deployment / Build
+# Deployment
 
-## If install fails with `specifiers in the lockfile ({})`
+This project uses **npm** and **package-lock.json**. Railway is configured to build with the **Dockerfile** (see `railway.json`).
 
-Your platform is using an old pnpm that can't read this lockfile.
+## Railway
 
-**Fix:** Use `npm run install:frozen` for the install step (uses pnpm 9).
+- **Builder:** Dockerfile (set in `railway.json`).
+- **Start command:** `node server.js` (Railway sets `PORT` automatically).
 
-- **Vercel:** Configured in `vercel.json`.
-- **Railway:** Configured in `railpack.json`. If it still fails, add a variable in Railway dashboard: **Variables** → **New Variable** → `RAILPACK_INSTALL_CMD` = `npm run install:frozen`.
-- **Netlify / Render / etc.:** In project settings, set **Install command** to `npm run install:frozen`.
+If the build fails on Railway:
+
+1. In Railway dashboard go to **Deployments** → open the failed deployment → copy the **full build log**.
+2. Check that the build is using the Dockerfile (log should show Docker build steps like `RUN npm ci` and `RUN npx next build`). If you see `pnpm install` instead, Railway is not using the Dockerfile — in **Settings** → **Build** set **Builder** to **Dockerfile**.
+3. Share the exact error message from the build log to debug further.
