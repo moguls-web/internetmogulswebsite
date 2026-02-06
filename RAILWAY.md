@@ -8,11 +8,9 @@ You must do **both** steps below. Only setting "Dockerfile path" is not enough.
 
 1. Railway → your **project** → open the **service** that deploys this repo.
 2. Go to **Settings** (gear icon) → **Build** section.
-3. Find the **Builder** dropdown (it may say "Railpack" or "Nixpacks").
-4. Change it to **"Dockerfile"** (or "DOCKERFILE").  
-   This is what actually switches the build to Docker. The "Dockerfile path" field only matters after this.
-5. In **Dockerfile path**, keep: `Dockerfile`
-6. **Root Directory** should be **empty** or `.`
+3. **Root Directory** must be **empty** (blank). If it’s set to a folder like `app` or `frontend`, Railway looks for the Dockerfile inside that folder and fails with "Dockerfile does not exist". Clear this field.
+4. Find the **Builder** dropdown and set it to **"Dockerfile"** (or "DOCKERFILE").
+5. **Dockerfile path:** `Dockerfile` (no leading slash)
 7. Click **Save** / **Update**.
 
 ---
