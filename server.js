@@ -14,21 +14,7 @@ app.prepare().then(() => {
     try {
       const parsedUrl = parse(req.url, true)
 
-      // Check for redirects with O(1) lookup
-
-
-      if (redirectMatch) {
-        // Remove console.log for production performance
-        if (dev) {
-          console.log(`Redirecting ${parsedUrl.pathname} to ${redirectMatch.destination}`)
-        }
-        res.writeHead(redirectMatch.permanent ? 301 : 302, {
-          'Location': redirectMatch.destination,
-          'Cache-Control': 'public, max-age=31536000, immutable'
-        })
-        res.end()
-        return
-      }
+      // Redirects are handled by next.config.mjs redirects()
 
       // Add caching headers for static assets
       if (parsedUrl.pathname.startsWith('/_next/static/') ||
