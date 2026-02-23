@@ -43,7 +43,7 @@ Growing hotel businesses since 2009.
                     </a>
                     <a href={`mailto:${person.email}`} className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
                       <Mail className="h-4 w-4 shrink-0 text-red-500" aria-hidden />
-                      <span>{person.email}</span>
+                      <span>{person.email}</span> 
                     </a>
                   </div>
                 </div>
