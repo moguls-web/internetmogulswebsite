@@ -25,12 +25,13 @@ export function Footer() {
 Growing hotel businesses since 2009.
 
             </p>
-            <div className="mt-8 max-w-2xl grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+            <div className="mt-4 max-w-2xl grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+              
               {[
                 { name: "Avi Arya", role: "Founder", phone: "9810153312", email: "avijit@internetmoguls.com" },
                 { name: "Rajesh", role: "Director and Senior Partner", phone: "8826104440", email: "rajesh@internetmoguls.com" },
               ].map((person, index) => (
-                <div key={person.email} className={index === 0 ? "border-r border-white pr-6 sm:pr-8" : ""}>
+                <div key={person.email} className={index === 0 ? "sm:border-r sm:border-white pr-6 sm:pr-8" : ""}>
                   <div className="flex flex-col gap-1.5 text-white text-sm">
                     <div className="flex items-center gap-2 flex-wrap">
                       <User className="h-4 w-4 shrink-0 text-red-500" aria-hidden />
@@ -43,7 +44,7 @@ Growing hotel businesses since 2009.
                     </a>
                     <a href={`mailto:${person.email}`} className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
                       <Mail className="h-4 w-4 shrink-0 text-red-500" aria-hidden />
-                      <span>{person.email}</span>
+                      <span>{person.email}</span> 
                     </a>
                   </div>
                 </div>
