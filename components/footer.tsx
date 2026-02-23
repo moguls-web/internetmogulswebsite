@@ -25,7 +25,7 @@ export function Footer() {
 Growing hotel businesses since 2009.
 
             </p>
-            <div className="mt-8 rounded-md border border-dashed border-background/40 bg-black/50 p-5 max-w-md">
+            <div className="mt-8 max-w-md">
               {[
                 { name: "Avi Arya", role: "Founder", phone: "9810153312", email: "avijit@internetmoguls.com" },
                 { name: "Rajesh", role: "Director and Senior Partner", phone: "8826104440", email: "rajesh@internetmoguls.com" },
