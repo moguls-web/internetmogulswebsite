@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { User, Phone, Mail } from "lucide-react"
 
 export function Footer() { 
 
@@ -24,39 +25,32 @@ export function Footer() {
 Growing hotel businesses since 2009.
 
             </p>
-            <div className="mt-8 space-y-2">
-              <p>
-                <a href="tel:+918826104440" className="hover:text-background/80 transition-colors">
-                  +91 88261 04440
-                </a>
-              </p>
-              <p className="text-background/60">
-                <a href="mailto:rajesh@internetmoguls.com" className="hover:text-background/80 transition-colors">
-                  rajesh@internetmoguls.com
-                </a>
-              </p>
+            <div className="mt-8 rounded-md border border-dashed border-background/40 bg-black/50 p-5 max-w-md">
+              {[
+                { name: "Avi Arya", role: "Founder", phone: "9810153312", email: "avijit@internetmoguls.com" },
+                { name: "Rajesh", role: "Director and Senior Partner", phone: "8826104440", email: "rajesh@internetmoguls.com" },
+              ].map((person, index) => (
+                <div key={person.email} className={index > 0 ? "pt-5 mt-5 border-t border-dashed border-background/40" : ""}>
+                  <div className="flex flex-col gap-1.5 text-white text-sm">
+                    <div className="flex items-center gap-2">
+                      <User className="h-4 w-4 shrink-0 text-red-500" aria-hidden />
+                      <span className="font-semibold text-base text-white">{person.name}</span> - 
+                      <span className="text-white/90">{person.role}</span>
+                    </div>
+                    <a href={`tel:+91${person.phone}`} className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                      <Phone className="h-4 w-4 shrink-0 text-red-500" aria-hidden />
+                      <span>{person.phone}</span>
+                    </a>
+                    <a href={`mailto:${person.email}`} className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                      <Mail className="h-4 w-4 shrink-0 text-red-500" aria-hidden />
+                      <span>{person.email}</span>
+                    </a>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div>
-            <h4 className="text-sm font-medium tracking-[0.2em] uppercase mb-6 text-background/50">Services</h4>
-            <ul className="space-y-4">
-              {[
-                { name: "Websites", href: "/work/#websites" }, 
-                { name: "Social Media", href: "/work/#social" }, 
-                { name: "Offline Creatives", href: "/work/#offline" }, 
-                { name: "Video Content", href: "/work/#reels" }, 
-              ].map(
-                (item) => (
-                  <li key={item.name}>
-                    <Link href={item.href} className="text-background/70 hover:text-background transition-colors">
-                      {item.name}
-                    </Link>
-                  </li>
-                ),
-              )}
-            </ul>
-          </div>
 
           <div>
             <h4 className="text-sm font-medium tracking-[0.2em] uppercase mb-6 text-background/50">Company</h4>
@@ -77,6 +71,27 @@ Growing hotel businesses since 2009.
               ))}
             </ul>
           </div>
+          
+          <div>
+            <h4 className="text-sm font-medium tracking-[0.2em] uppercase mb-6 text-background/50">Services</h4>
+            <ul className="space-y-4">
+              {[
+                { name: "Websites", href: "/work/#websites" }, 
+                { name: "Social Media", href: "/work/#social" }, 
+                { name: "Offline Creatives", href: "/work/#offline" }, 
+                { name: "Video Content", href: "/work/#reels" }, 
+              ].map(
+                (item) => (
+                  <li key={item.name}>
+                    <Link href={item.href} className="text-background/70 hover:text-background transition-colors">
+                      {item.name}
+                    </Link>
+                  </li>
+                ),
+              )}
+            </ul>
+          </div>
+
         </div>
 
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mt-16 pt-8 border-t border-background/10 gap-6">

@@ -1,4 +1,13 @@
-# Railway – fix pnpm / lockfile error
+# Railway – fix "Dockerfile does not exist" / pnpm error
+
+## First: Confirm Dockerfile is on GitHub
+
+1. Open **https://github.com/moguls-web/internetmogulswebsite** (or your repo URL).
+2. Ensure you’re on the **main** branch.
+3. On the repo **root** (file list), check that **Dockerfile** (capital D) is there.
+4. If it’s missing, push your latest code: `git push origin main`.
+
+---
 
 You must do **both** steps below. Only setting "Dockerfile path" is not enough.
 
@@ -12,6 +21,16 @@ You must do **both** steps below. Only setting "Dockerfile path" is not enough.
 4. Find the **Builder** dropdown and set it to **"Dockerfile"** (or "DOCKERFILE").
 5. **Dockerfile path:** `Dockerfile` (no leading slash)
 7. Click **Save** / **Update**.
+
+---
+
+## Step 1b: If it still says "Dockerfile does not exist"
+
+1. In the same service, go to **Variables**.
+2. Click **New Variable**.
+3. **Name:** `RAILWAY_DOCKERFILE_PATH`  
+   **Value:** `Dockerfile`
+4. Save and **Redeploy**. This tells Railway exactly where the Dockerfile is.
 
 ---
 
