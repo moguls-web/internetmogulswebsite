@@ -177,7 +177,7 @@ export function CaseStudyDetail({ caseStudy }: CaseStudyProps) {
 
       {/* Gallery Section */}
       <section className="py-24 lg:py-32 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12">
             <div>
               <p className="text-sm font-bold tracking-[0.3em] uppercase text-muted-foreground mb-4">Visual</p>

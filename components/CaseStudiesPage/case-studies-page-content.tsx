@@ -113,6 +113,49 @@ const caseStudies = [
     featured: false,
     tags: ["Google Ads", "PPC", "Performance Marketing"],
   },
+  {
+    id: "the-corinthians-resort",
+    title: "The Corinthians Resort",
+    subtitle: "City Hotel · Revenue & OTA Strategy",
+    category: "SEO + Performance Marketing + Website Optimisation",
+    image: "/Facade-2.jpg",
+    stats: [
+      { label: "Increase in Direct Booking Revenue (YoY)", value: "+168%" },
+      { label: "Growth in Organic Traffic Recovery", value: "+156%" },
+      { label: "ROAS achieved during peak seasonal campaigns", value: "+38X" },
+    ],
+    description: "Driving Direct Revenue Growth Post Website Migration",
+    featured: false,
+    tags: ["Google Ads", "PPC", "Performance Marketing"],
+  },
+  {
+    id: "hard-rock-hotel",
+    title: "Hard Rock Hotel",
+    subtitle: "City Hotel · Revenue & OTA Strategy",
+    category: "SEO + Social Media + Performance Marketing",
+    image: "/hr-1banner.jpg",
+    stats: [
+      { label: "Direct booking value generated through Google Ads", value: "₹14.7L+ " },
+      { label: "Qualified calls generated from performance campaigns", value: "118+" }, 
+    ],
+    description: "Driving Direct Revenue Growth Post Website Migration",
+    featured: false,
+    tags: ["SEO", "Social Media", "Performance Marketing"],
+  },
+  {
+    id: "celebrity-resort",
+    title: "Celebrity Resort",
+    subtitle: "City Hotel · Revenue & OTA Strategy",
+    category: "SEO + OTA Strategy + Performance Marketing + Social Media",
+    image: "/banner-tcp-home.jpg",
+    stats: [
+      { label: "Increase in Direct Booking Revenue", value: "59%" },
+      { label: "Reduction in OTA Dependency from", value: "80% to 30%" }, 
+    ],
+    description: "Driving Direct Revenue Growth Post Website Migration",
+    featured: false,
+    tags: ["SEO", "OTA Strategy", "Performance Marketing", "Social Media"],
+  },
 ]
 
 const categories = [
