@@ -39,10 +39,10 @@ The challenge was to **create demand where none existed**, attract high-value we
     ],
     services: ["Website Design & Development", "Wedding Landing Pages", "SEO & GMB Optimization", "Social Media Strategy", "Influencer Collaborations", "Performance Marketing (Search, Call & Lead Ads)"],
     gallery: [
-      "/86t7frytgyui.webp", 
-      "/tysdo.webp", 
-      "/t7tfygyhu.webp", 
-      "/65rtfgy78tg.webp", 
+      "/86t7frytgyui.webp",
+      "/tysdo.webp",
+      "/t7tfygyhu.webp",
+      "/65rtfgy78tg.webp",
     ],
   },
   "leisure-hotels": {
@@ -79,10 +79,10 @@ The challenge was to **consolidate all properties under one strong brand voice**
     ],
     services: ["Brand Positioning", "Social Media Strategy", "Content Marketing", "Campaign Planning", "Paid Social Advertising"],
     gallery: [
-      "/675eee5c.jpg?height=800&width=1200", 
-      "/c13c79f0.jpg?height=800&width=1200", 
-      "/9e4ec715.jpg?height=800&width=1200", 
-      "/f7ec351b.jpg?height=800&width=1200", 
+      "/675eee5c.jpg?height=800&width=1200",
+      "/c13c79f0.jpg?height=800&width=1200",
+      "/9e4ec715.jpg?height=800&width=1200",
+      "/f7ec351b.jpg?height=800&width=1200",
     ],
   },
   "grand-dragon-ladakh": {
@@ -101,13 +101,13 @@ The objective was to transform social media into a **discovery and inspiration c
       "Improve engagement and content interaction",
       "Build a cohesive luxury-led feed",
       "Highlight Ladakh’s culture and experiences",
-      "Drive traffic from social platforms", 
+      "Drive traffic from social platforms",
     ],
     challenges: [
       "Stalled follower growth",
       "Limited reach & impressions",
       "Inconsistent visual storytelling",
-      "Underutilization of Stories & UGC", 
+      "Underutilization of Stories & UGC",
     ],
     results: [
       { value: "80,000+", label: "Monthly Reach" },
@@ -116,7 +116,7 @@ The objective was to transform social media into a **discovery and inspiration c
     ],
     services: ["Content Strategy & Feed Repositioning", "Instagram & Facebook Stories", "User-Generated Content Campaigns", "Visual Consistency & Brand Storytelling"],
     gallery: [
-      "/img-979823d.webp?height=800&width=1200", 
+      "/img-979823d.webp?height=800&width=1200",
       "/img-9876.webp?height=800&width=1200",
       "/675656.webp?height=800&width=1200",
       "/7867yguh.webp?height=800&width=1200",
@@ -137,12 +137,12 @@ The challenge was to **own wedding search intent organically** and improve lead 
       "Increase wedding-related organic traffic",
       "Generate high-quality direct enquiries",
       "Improve lead-to-conversion ratio",
-      "Reduce dependency on aggregators", 
+      "Reduce dependency on aggregators",
     ],
     challenges: [
       "High competition on wedding keywords",
       "Aggregator dominance on SERPs",
-      "Need for conversion-focused UX", 
+      "Need for conversion-focused UX",
     ],
     results: [
       { value: "+21.32%", label: "Increase in Wedding Enquiries" },
@@ -151,10 +151,10 @@ The challenge was to **own wedding search intent organically** and improve lead 
     ],
     services: ["Wedding Landing Page Optimization", "SEO & Keyword Strategy", "Heatmap & UX Analysis", "Conversion Optimization"],
     gallery: [
-      "/NM3020249561-1704283261196462955939.webp",  
-      "/5ertgf.webp",  
-      "/0oiioijo.webp",  
-      "/rtyoad.webp",  
+      "/NM3020249561-1704283261196462955939.webp",
+      "/5ertgf.webp",
+      "/0oiioijo.webp",
+      "/rtyoad.webp",
     ],
   },
   "taj-mahal-new-delhi": {
@@ -173,13 +173,13 @@ The challenge was to balance **heritage with relevance**, moving away from overl
       "Improve engagement and content interaction",
       "Build a cohesive luxury-led feed",
       "Highlight Ladakh’s culture and experiences",
-      "Drive traffic from social platforms", 
+      "Drive traffic from social platforms",
     ],
     challenges: [
       "Lack of dynamic content formats",
       "Underrepresented hotel experiences",
       "Limited PR-led storytelling",
-      "Overly promotional communication style", 
+      "Overly promotional communication style",
     ],
     results: [
       { value: "+267%", label: "Increase in Instagram Reach" },
@@ -210,13 +210,13 @@ The objective was to **turn the brand website into a primary revenue channel** w
       "Improve website conversion rates",
       "Reduce OTA dependency",
       "Strengthen brand-led search visibility",
-      "Create a scalable digital framework for a large chain", 
+      "Create a scalable digital framework for a large chain",
     ],
     challenges: [
       "Low keyword rankings for brand & generic searches",
       "Weak website UX and selling propositions",
       "Heavy reliance on OTAs",
-      "Inconsistent mobile experience", 
+      "Inconsistent mobile experience",
     ],
     results: [
       { value: "+150%", label: "Increase in Bookings" },
@@ -226,10 +226,10 @@ The objective was to **turn the brand website into a primary revenue channel** w
     ],
     services: ["Award-Winning Website Redesign", "SEO & Content Strategy", "Conversion Rate Optimization", "Mobile Experience Enhancement", "Direct Booking Incentives"],
     gallery: [
-      "/08_Dec_2023_11_41_15Pool- Day.jpg", 
-      "/29_Jun_2023_04_36_41Duplex-Suite,-Bedroom.webp", 
-      "/29_Jun_2023_04_39_311000x1000-all-img.webp", 
-      "/29_Jun_2023_04_41_54Citrus-Cafe,-shot-1.webp", 
+      "/08_Dec_2023_11_41_15Pool- Day.jpg",
+      "/29_Jun_2023_04_36_41Duplex-Suite,-Bedroom.webp",
+      "/29_Jun_2023_04_39_311000x1000-all-img.webp",
+      "/29_Jun_2023_04_41_54Citrus-Cafe,-shot-1.webp",
     ],
   },
   "niranta-airport-transit-hotel-mumbai": {
@@ -248,14 +248,14 @@ The challenge was to **optimize pricing, improve OTA performance, and increase A
       "Improve ARR without heavy discounting",
       "Optimize OTA productivity",
       "Balance occupancy with profitability",
-      "Drive traffic from social platforms", 
+      "Drive traffic from social platforms",
     ],
     challenges: [
       "Severe travel restrictions",
       "Limited international footfall",
       "Flat pricing across all days",
-      "Low participation in OTA offers", 
-      "High ARR benchmark to maintain", 
+      "Low participation in OTA offers",
+      "High ARR benchmark to maintain",
     ],
     results: [
       { value: "+175%", label: "Increase in Revenue" },
@@ -264,12 +264,12 @@ The challenge was to **optimize pricing, improve OTA performance, and increase A
     ],
     services: ["Dynamic Pricing Strategy", "OTA Revenue Optimization", "Demand Forecasting", "Channel Performance Monitoring", "Strategic Promotions & Offers"],
     gallery: [
-      "/niranta-airport-transit.webp", 
-      "/niranta-airport-transit-copy.webp", 
-      "/niranta-airport-transit-20.webp", 
-      "/niranta-airport-transit-3.webp", 
+      "/niranta-airport-transit.webp",
+      "/niranta-airport-transit-copy.webp",
+      "/niranta-airport-transit-20.webp",
+      "/niranta-airport-transit-3.webp",
     ],
-  },  
+  },
   "the-corinthians-resort": {
     title: "The Corinthians Resort, Pune",
     subtitle: "City Hotel · Revenue & OTA Strategy",
@@ -283,16 +283,16 @@ The challenge was to **optimize pricing, improve OTA performance, and increase A
       "Increase direct revenue & reduce OTA dependency",
       "Improve weekday occupancy through targeted campaigns",
       "Generate high-quality wedding & event enquiries",
-      "Strengthen keyword rankings & brand search visibility", 
-      "Build a revenue-led full-funnel digital growth engine", 
+      "Strengthen keyword rankings & brand search visibility",
+      "Build a revenue-led full-funnel digital growth engine",
     ],
     challenges: [
       "Significant drop in organic traffic due to domain migration",
       "Decline in direct bookings & website enquiries",
       "Loss of brand keyword rankings and authority",
-      "Dependence on paid campaigns during SEO recovery phase", 
-      "Need to maintain premium positioning without heavy discounts", 
-      "Ensuring unified messaging across website, ads & social", 
+      "Dependence on paid campaigns during SEO recovery phase",
+      "Need to maintain premium positioning without heavy discounts",
+      "Ensuring unified messaging across website, ads & social",
     ],
     results: [
       { value: "168%", label: "Increase in Direct Booking Revenue (YoY)" },
@@ -303,11 +303,11 @@ The challenge was to **optimize pricing, improve OTA performance, and increase A
       { value: "44%", label: "Growth in “Book Now” engagement after optimisation" },
     ],
     services: ["Website Development & Conversion Optimisation", "Search Engine Optimisation (SEO)", "Performance Marketing (Google Ads & Meta Ads)", "Analytics & Governance"],
-    gallery: [ 
-      "/Room---Main-image.jpg",   
-      "/Dinning-page---cupola-image.jpg",   
-      "/MERDORA-6.jpg",   
-      "/Home---Spa-&-Salon.jpg",   
+    gallery: [
+      "/Room---Main-image.jpg",
+      "/Dinning-page---cupola-image.jpg",
+      "/MERDORA-6.jpg",
+      "/Home---Spa-&-Salon.jpg",
     ],
   },
   "hard-rock-hotel": {
@@ -325,7 +325,7 @@ The challenge was to **optimize pricing, improve OTA performance, and increase A
       "Improve weekday occupancy & event-driven demand",
       "Enhance visibility for party, brunch & experiential offerings",
       "Create a unified brand voice across all digital channels",
-      
+
     ],
     challenges: [
       "High reliance on OTAs impacting margins",
@@ -340,14 +340,14 @@ The challenge was to **optimize pricing, improve OTA performance, and increase A
       { value: "118+ ", label: "Qualified calls generated from performance campaigns" },
       { value: "", label: "Significant increase in social engagement via experience-led content" },
       { value: "", label: "Stronger brand visibility for experiential keywords & event searches" },
-      { value: "", label: "Improved conversion-focused demand generation across funnel" }, 
+      { value: "", label: "Improved conversion-focused demand generation across funnel" },
     ],
     services: ["Website Development & Conversion Optimisation", "Search Engine Optimisation (SEO)", "Performance Marketing (Google Ads & Meta Ads)", "Social Media Marketing"],
     gallery: [
-      "/hr-g-2.jpg",  
-      "/hr-g-3.jpg",  
-      "/hr-g-1.jpg",  
-      "/hr-g-4.jpg",  
+      "/hr-g-2.JPG",
+      "/hr-g-3.JPG",
+      "/hr-g-1.JPG",
+      "/hr-g-4.jpg",
     ],
   },
   "celebrity-resort": {
@@ -364,7 +364,7 @@ The challenge was to **optimize pricing, improve OTA performance, and increase A
       "Enhance search visibility for high-intent Hyderabad keywords",
       "Scale paid media while controlling cost per acquisition",
       "Build consistent social storytelling across platforms",
-      "Create a structured revenue-focused digital marketing system",      
+      "Create a structured revenue-focused digital marketing system",
     ],
     challenges: [
       "Fragmented presentation of services across digital platforms",
@@ -379,15 +379,15 @@ The challenge was to **optimize pricing, improve OTA performance, and increase A
       { value: "from 80% to 30%", label: "Reduction in OTA Dependency " },
       { value: "22%", label: "Improvement in Website Conversion Rate" },
       { value: "3.2X", label: "ROAS achieved in paid campaigns" },
-      { value: "15%", label: "Increase in Weekday Occupancy" }, 
-      { value: "", label: "Stronger unified brand visibility across digital channels" }, 
+      { value: "15%", label: "Increase in Weekday Occupancy" },
+      { value: "", label: "Stronger unified brand visibility across digital channels" },
     ],
     services: ["Website Development & Conversion Optimisation", "Search Engine Optimisation (SEO)", "Performance Marketing (Google Ads & Meta Ads)", "Social Media Marketing", "OTA Strategy", "Analytics & Reporting"],
     gallery: [
-      "/banner-tcp-g-1.jpg",  
-      "/banner-tcp-g-2.jpg",  
-      "/banner-tcp-g-3.jpg",  
-      "/banner-tcp-g-4.jpg",  
+      "/banner-tcp-g-1.jpg",
+      "/banner-tcp-g-2.jpg",
+      "/banner-tcp-g-3.jpg",
+      "/banner-tcp-g-4.jpg",
     ],
   },
 }
@@ -409,7 +409,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   // Generate meta title and description based on case study data
   const title = `${caseStudy.title} Case Study - ${caseStudy.subtitle} | Internet Moguls`
-  const description = caseStudy.headline 
+  const description = caseStudy.headline
     ? `${caseStudy.headline}. ${caseStudy.story.substring(0, 120)}...`
     : `Discover how Internet Moguls helped ${caseStudy.title} achieve remarkable results through ${caseStudy.category.toLowerCase()}.`
 
