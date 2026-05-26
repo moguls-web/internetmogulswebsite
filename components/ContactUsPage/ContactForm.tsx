@@ -583,15 +583,14 @@ const ContactForm = () => {
     setSubmitStatus({ type: null, message: '' })
 
     try {
+      const fullMobile = `${values.countryCode}${values.mobile}`
       const formData = new URLSearchParams()
       
       // Append all form values to FormData
       Object.keys(values).forEach((key) => {
         const value = values[key as keyof typeof values]
         if (value !== undefined && value !== null) {
-          // Combine country code and mobile for the mobile field
           if (key === 'mobile') {
-            const fullMobile = `${values.countryCode}${value}`
             formData.append('mobile', fullMobile)
           } else if (key !== 'countryCode') {
             formData.append(key, value)
@@ -599,17 +598,70 @@ const ContactForm = () => {
         }
       })
 
-      // Add querydate
       formData.append('querydate', new Date().toLocaleString())
 
-      await fetch('https://script.google.com/macros/s/AKfycbxyI7nnv-_LLoATEARfaH60saFHHBpYi7koyXcTftVqD4UrUsWKE6GFYorYDFDt1zs3GA/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formData.toString(),
-      })
+      const zohoPayload = {
+        firstName: values.firstName,
+        lastName: values.lastName,
+        email: values.email,
+        mobile: fullMobile,
+        website: values.website,
+        company: values.company,
+        city: values.city,
+        numberOfRooms: values.numberOfRooms,
+        averageRoomRate: values.averageRoomRate,
+        revenueImpactAreas: values.revenueImpactAreas,
+        bookingSource: values.bookingSource,
+        banquetEnquiries: values.banquetEnquiries,
+        restaurantDiscoverable: values.restaurantDiscoverable,
+        otherChallenges: values.otherChallenges,
+      }
+
+      const [sheetsResult, zohoResult] = await Promise.allSettled([
+        fetch('https://script.google.com/macros/s/AKfycbxyI7nnv-_LLoATEARfaH60saFHHBpYi7koyXcTftVqD4UrUsWKE6GFYorYDFDt1zs3GA/exec', {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: formData.toString(),
+        }),
+        fetch('/api/zoho-web-to-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(zohoPayload),
+        }),
+      ])
+
+      if (sheetsResult.status === 'rejected') {
+        throw sheetsResult.reason
+      }
+
+      let zohoConfigured = false
+      if (zohoResult.status === 'fulfilled') {
+        const zohoResponse = zohoResult.value
+        if (zohoResponse.status === 503) {
+          console.warn(
+            'Zoho CRM Web-to-Lead is not configured. Set ZOHO_XNQSJSDP and ZOHO_XMIWTLD on the server.'
+          )
+        } else {
+          zohoConfigured = true
+          if (!zohoResponse.ok) {
+            const zohoError = await zohoResponse.json().catch(() => ({}))
+            throw new Error(
+              (zohoError as { error?: string }).error ||
+                'Failed to save your enquiry in Zoho CRM. Please try again.'
+            )
+          }
+        }
+      } else {
+        zohoConfigured = true
+        throw zohoResult.reason
+      }
+
+      if (zohoConfigured) {
+        console.info('Contact form submitted to Google Sheets and Zoho CRM.')
+      }
 
       setSubmitStatus({ type: 'success', message: 'Thank you! Your form has been submitted successfully.' })
       
@@ -643,101 +695,6 @@ const ContactForm = () => {
       setIsSubmitting(false)
     }
   }
-
-  // Initialize Zoho form functions
-  React.useEffect(() => {
-    if (typeof window !== 'undefined') {
-      (window as any).addAriaSelected1833590000044323165 = function() {
-        var optionElem = (event as any).target;
-        var previousSelectedOption = optionElem.querySelector('[aria-selected=true]');
-        if (previousSelectedOption) {
-          previousSelectedOption.removeAttribute('aria-selected');
-        }
-        optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
-      };
-      
-      (window as any).validateEmail1833590000044323165 = function() {
-        var form = document.forms.namedItem('WebToLeads1833590000044323165') as HTMLFormElement | null;
-        if (!form) return true;
-        var emailFld = form.querySelectorAll('[data-ftype=email]');
-        var i;
-        for (i = 0; i < emailFld.length; i++) {
-          var emailVal = (emailFld[i] as HTMLInputElement).value;
-          if ((emailVal.replace(/^\s+|\s+$/g, '')).length != 0) {
-            var atpos = emailVal.indexOf('@');
-            var dotpos = emailVal.lastIndexOf('.');
-            if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length) {
-              alert('Please enter a valid email address. ');
-              (emailFld[i] as HTMLInputElement).focus();
-              return false;
-            }
-          }
-        }
-        return true;
-      };
-      
-      (window as any).checkMandatory1833590000044323165 = function() {
-        var mndFileds = new Array('Company', 'First Name', 'Last Name', 'Email', 'Mobile', 'City', 'LEADCF7', 'LEADCF8', 'LEADCF22', 'LEADCF24', 'LEADCF25', 'LEADCF26', 'LEADCF28');
-        var fldLangVal = new Array('Company', 'First Name', 'Last Name', 'Email', 'Mobile', 'City', 'Average Room Rate', 'No. of Rooms', 'Any other challenges', 'Do you receive banquet / wedding enquiries online?', 'Most of your room bookings come from', 'Is your restaurant discoverable online?', 'Which areas are impacting your revenue today?');
-        for (var i = 0; i < mndFileds.length; i++) {
-          var formElement = document.forms.namedItem('WebToLeads1833590000044323165') as HTMLFormElement | null;
-          if (!formElement) continue;
-          var fieldObj = formElement.elements.namedItem(mndFileds[i]) as HTMLInputElement | HTMLSelectElement | null;
-          if (fieldObj) {
-            if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length == 0) {
-              if (fieldObj.type == 'file') {
-                alert('Please select a file to upload.');
-                fieldObj.focus();
-                return false;
-              }
-              alert(fldLangVal[i] + ' cannot be empty.');
-              fieldObj.focus();
-              return false;
-            }
-            else if (fieldObj.nodeName == 'SELECT') {
-              var selectField = fieldObj as HTMLSelectElement;
-              if (selectField.options[selectField.selectedIndex].value == '-None-') {
-                alert(fldLangVal[i] + ' cannot be none.');
-                fieldObj.focus();
-                return false;
-              }
-            }
-            else if (fieldObj.type == 'checkbox') {
-              if (fieldObj.checked == false) {
-                alert('Please accept  ' + fldLangVal[i]);
-                fieldObj.focus();
-                return false;
-              }
-            }
-            try {
-              if (fieldObj.name == 'Last Name') {
-                var name = fieldObj.value;
-              }
-            }
-            catch (e) { }
-          }
-        }
-        if (!(window as any).validateEmail1833590000044323165()) {
-          return false;
-        }
-        var urlparams = new URLSearchParams(window.location.search);
-        if (urlparams.has('service') && (urlparams.get('service') === 'smarturl')) {
-          var webform = document.getElementById('webform1833590000044323165');
-          var service = urlparams.get('service');
-          var smarturlfield = document.createElement('input');
-          smarturlfield.setAttribute('type', 'hidden');
-          smarturlfield.setAttribute('value', service || '');
-          smarturlfield.setAttribute('name', 'service');
-          webform?.appendChild(smarturlfield);
-        }
-        var submitBtn = document.querySelector('.crmWebToEntityForm .formsubmit');
-        if (submitBtn) {
-          (submitBtn as HTMLInputElement).setAttribute('disabled', 'true');
-        }
-        return true;
-      };
-    }
-  }, [])
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
