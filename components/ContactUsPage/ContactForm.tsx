@@ -21,6 +21,9 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
+import { submitZohoWebToLeadFromBrowser } from '@/lib/zoho/submitFromBrowser'
+import type { ZohoWebToLeadPublicConfig } from '@/lib/zoho/submitFromBrowser'
+import type { ContactLeadPayload } from '@/lib/zoho/webToLead'
 
 // Country codes list
 const countryCodes = [
@@ -600,7 +603,7 @@ const ContactForm = () => {
 
       formData.append('querydate', new Date().toLocaleString())
 
-      const zohoPayload = {
+      const zohoPayload: ContactLeadPayload = {
         firstName: values.firstName,
         lastName: values.lastName,
         email: values.email,
@@ -617,7 +620,7 @@ const ContactForm = () => {
         otherChallenges: values.otherChallenges,
       }
 
-      const [sheetsResult, zohoResult] = await Promise.allSettled([
+      const [sheetsResult, zohoApiResult] = await Promise.allSettled([
         fetch('https://script.google.com/macros/s/AKfycbxyI7nnv-_LLoATEARfaH60saFHHBpYi7koyXcTftVqD4UrUsWKE6GFYorYDFDt1zs3GA/exec', {
           method: 'POST',
           mode: 'no-cors',
@@ -637,30 +640,32 @@ const ContactForm = () => {
         throw sheetsResult.reason
       }
 
-      let zohoConfigured = false
-      if (zohoResult.status === 'fulfilled') {
-        const zohoResponse = zohoResult.value
+      let zohoSavedViaApi = false
+      if (zohoApiResult.status === 'fulfilled') {
+        const zohoResponse = zohoApiResult.value
         if (zohoResponse.status === 503) {
-          console.warn(
-            'Zoho CRM Web-to-Lead is not configured. Set ZOHO_XNQSJSDP and ZOHO_XMIWTLD on the server.'
+          console.warn('Zoho API: env vars missing on server.')
+        } else if (!zohoResponse.ok) {
+          const zohoError = await zohoResponse.json().catch(() => ({}))
+          throw new Error(
+            (zohoError as { error?: string }).error ||
+              'Failed to save your enquiry in Zoho CRM. Please try again.'
           )
         } else {
-          zohoConfigured = true
-          if (!zohoResponse.ok) {
-            const zohoError = await zohoResponse.json().catch(() => ({}))
-            throw new Error(
-              (zohoError as { error?: string }).error ||
-                'Failed to save your enquiry in Zoho CRM. Please try again.'
-            )
-          }
+          zohoSavedViaApi = true
         }
-      } else {
-        zohoConfigured = true
-        throw zohoResult.reason
       }
 
-      if (zohoConfigured) {
-        console.info('Contact form submitted to Google Sheets and Zoho CRM.')
+      // Browser POST when API route is missing (old deploy) or server could not confirm Zoho
+      if (!zohoSavedViaApi) {
+        const zohoConfigResponse = await fetch('/api/zoho-web-to-lead/config')
+        if (!zohoConfigResponse.ok) {
+          throw new Error(
+            'Zoho CRM is not configured. Set ZOHO_XNQSJSDP and ZOHO_XMIWTLD in Railway environment variables, then redeploy.'
+          )
+        }
+        const zohoConfig = (await zohoConfigResponse.json()) as ZohoWebToLeadPublicConfig
+        await submitZohoWebToLeadFromBrowser(zohoConfig, zohoPayload)
       }
 
       setSubmitStatus({ type: 'success', message: 'Thank you! Your form has been submitted successfully.' })
