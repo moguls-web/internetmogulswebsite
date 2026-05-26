@@ -35,7 +35,8 @@ export function parseZohoWebToLeadResponse(html: string): {
   if (
     text.includes('your request has been successfully received') ||
     text.includes('thank you for choosing us') ||
-    text.includes('record has been added')
+    text.includes('record has been added') ||
+    text.includes('window.location.assign') && text.includes('thank-you')
   ) {
     return { accepted: true }
   }

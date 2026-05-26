@@ -624,19 +624,43 @@ const ContactForm = () => {
         otherChallenges: values.otherChallenges,
       }
 
-      await submitLeadToZohoCRM(zohoPayload)
+      const webhookPayload = {
+        ...zohoPayload,
+        querydate: new Date().toISOString(),
+        source: 'Reach Us - Hotel Contact Form',
+      }
 
-      await fetch(
-        'https://script.google.com/macros/s/AKfycbxyI7nnv-_LLoATEARfaH60saFHHBpYi7koyXcTftVqD4UrUsWKE6GFYorYDFDt1zs3GA/exec',
-        {
+      const [zohoResult, sheetsResult, webhookResult] = await Promise.allSettled([
+        submitLeadToZohoCRM(zohoPayload),
+        fetch(
+          'https://script.google.com/macros/s/AKfycbxyI7nnv-_LLoATEARfaH60saFHHBpYi7koyXcTftVqD4UrUsWKE6GFYorYDFDt1zs3GA/exec',
+          {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData.toString(),
+          }
+        ),
+        fetch('https://hook.us2.make.com/9g7afviptztmuohp1ag7gssd9czoik2y', {
           method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          body: formData.toString(),
-        }
-      )
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(webhookPayload),
+        }),
+      ])
+
+      if (zohoResult.status === 'rejected') {
+        throw zohoResult.reason
+      }
+
+      if (sheetsResult.status === 'rejected') {
+        console.warn('Google Sheets submission failed:', sheetsResult.reason)
+      }
+
+      if (webhookResult.status === 'rejected') {
+        console.warn('Make.com webhook failed:', webhookResult.reason)
+      }
 
       setSubmitStatus({ type: 'success', message: 'Thank you! Your form has been submitted successfully.' })
       
