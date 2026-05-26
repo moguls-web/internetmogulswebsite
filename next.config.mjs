@@ -2,6 +2,14 @@
 const nextConfig = {
   //output: 'standalone',
   trailingSlash: true,
+  env: {
+    NEXT_PUBLIC_ZOHO_WEBTOLEAD_URL:
+      process.env.ZOHO_WEBTOLEAD_URL || 'https://crm.zoho.in/crm/WebToLeadForm',
+    NEXT_PUBLIC_ZOHO_XNQSJSDP: process.env.ZOHO_XNQSJSDP || '',
+    NEXT_PUBLIC_ZOHO_XMIWTLD: process.env.ZOHO_XMIWTLD || '',
+    NEXT_PUBLIC_ZOHO_RETURN_URL:
+      process.env.ZOHO_RETURN_URL || 'https://www.internetmoguls.com/thank-you',
+  },
   typescript: {
     ignoreBuildErrors: true,
   },

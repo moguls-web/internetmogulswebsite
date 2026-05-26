@@ -1,3 +1,5 @@
+import { sanitizeContactLeadPayload } from './sanitizePayload'
+
 /** Hotel contact form → Zoho CRM Web-to-Lead field names (from Zoho embed). */
 export type ContactLeadPayload = {
   firstName: string
@@ -133,14 +135,14 @@ export async function submitContactLeadToZoho(
     return { ok: false, skipped: true, error: 'Zoho Web-to-Lead is not configured' }
   }
 
+  const sanitized = sanitizeContactLeadPayload(payload)
   const normalized: ContactLeadPayload = {
-    ...payload,
-    numberOfRooms: normalizeZohoPicklistValue(payload.numberOfRooms),
-    averageRoomRate: normalizeZohoPicklistValue(payload.averageRoomRate),
-    bookingSource: normalizeZohoPicklistValue(payload.bookingSource),
-    banquetEnquiries: normalizeZohoPicklistValue(payload.banquetEnquiries),
-    restaurantDiscoverable: normalizeZohoPicklistValue(payload.restaurantDiscoverable),
-    otherChallenges: payload.otherChallenges?.trim() || 'N/A',
+    ...sanitized,
+    numberOfRooms: normalizeZohoPicklistValue(sanitized.numberOfRooms),
+    averageRoomRate: normalizeZohoPicklistValue(sanitized.averageRoomRate),
+    bookingSource: normalizeZohoPicklistValue(sanitized.bookingSource),
+    banquetEnquiries: normalizeZohoPicklistValue(sanitized.banquetEnquiries),
+    restaurantDiscoverable: normalizeZohoPicklistValue(sanitized.restaurantDiscoverable),
   }
 
   const body = buildZohoContactLeadBody(normalized, {

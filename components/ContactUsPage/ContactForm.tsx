@@ -21,8 +21,8 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form'
-import { submitZohoWebToLeadFromBrowser } from '@/lib/zoho/submitFromBrowser'
-import type { ZohoWebToLeadPublicConfig } from '@/lib/zoho/submitFromBrowser'
+import { fetchZohoWebToLeadConfig } from '@/lib/zoho/clientConfig'
+import { submitLeadToZohoCRM } from '@/lib/zoho/submitLeadClient'
 import type { ContactLeadPayload } from '@/lib/zoho/webToLead'
 
 // Country codes list
@@ -559,6 +559,10 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = React.useState(false)
   const [submitStatus, setSubmitStatus] = React.useState<{ type: 'success' | 'error' | null; message: string }>({ type: null, message: '' })
 
+  React.useEffect(() => {
+    fetchZohoWebToLeadConfig()
+  }, [])
+
   // Contact form
   const contactForm = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
@@ -620,53 +624,19 @@ const ContactForm = () => {
         otherChallenges: values.otherChallenges,
       }
 
-      const [sheetsResult, zohoApiResult] = await Promise.allSettled([
-        fetch('https://script.google.com/macros/s/AKfycbxyI7nnv-_LLoATEARfaH60saFHHBpYi7koyXcTftVqD4UrUsWKE6GFYorYDFDt1zs3GA/exec', {
+      await submitLeadToZohoCRM(zohoPayload)
+
+      await fetch(
+        'https://script.google.com/macros/s/AKfycbxyI7nnv-_LLoATEARfaH60saFHHBpYi7koyXcTftVqD4UrUsWKE6GFYorYDFDt1zs3GA/exec',
+        {
           method: 'POST',
           mode: 'no-cors',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
           },
           body: formData.toString(),
-        }),
-        fetch('/api/zoho-web-to-lead', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(zohoPayload),
-        }),
-      ])
-
-      if (sheetsResult.status === 'rejected') {
-        throw sheetsResult.reason
-      }
-
-      let zohoSavedViaApi = false
-      if (zohoApiResult.status === 'fulfilled') {
-        const zohoResponse = zohoApiResult.value
-        if (zohoResponse.status === 503) {
-          console.warn('Zoho API: env vars missing on server.')
-        } else if (!zohoResponse.ok) {
-          const zohoError = await zohoResponse.json().catch(() => ({}))
-          throw new Error(
-            (zohoError as { error?: string }).error ||
-              'Failed to save your enquiry in Zoho CRM. Please try again.'
-          )
-        } else {
-          zohoSavedViaApi = true
         }
-      }
-
-      // Browser POST when API route is missing (old deploy) or server could not confirm Zoho
-      if (!zohoSavedViaApi) {
-        const zohoConfigResponse = await fetch('/api/zoho-web-to-lead/config')
-        if (!zohoConfigResponse.ok) {
-          throw new Error(
-            'Zoho CRM is not configured. Set ZOHO_XNQSJSDP and ZOHO_XMIWTLD in Railway environment variables, then redeploy.'
-          )
-        }
-        const zohoConfig = (await zohoConfigResponse.json()) as ZohoWebToLeadPublicConfig
-        await submitZohoWebToLeadFromBrowser(zohoConfig, zohoPayload)
-      }
+      )
 
       setSubmitStatus({ type: 'success', message: 'Thank you! Your form has been submitted successfully.' })
       
@@ -695,7 +665,9 @@ const ContactForm = () => {
       }, 5000)
     } catch (error) {
       console.error('Error submitting form:', error)
-      setSubmitStatus({ type: 'error', message: 'Something went wrong. Please try again.' })
+      const message =
+        error instanceof Error ? error.message : 'Something went wrong. Please try again.'
+      setSubmitStatus({ type: 'error', message })
     } finally {
       setIsSubmitting(false)
     }
