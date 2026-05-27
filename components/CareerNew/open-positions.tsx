@@ -133,7 +133,8 @@ const departmentColors: Record<string, string> = {
 }
 
 // Google Sheets URL for career applications
-const CAREER_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbygAasKhlifho1i9Rplahmy2he9I3VAQeKBHfhcMATug-5BLa5xUcXTfNDI9OGhmofclg/exec'
+//const CAREER_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbygAasKhlifho1i9Rplahmy2he9I3VAQeKBHfhcMATug-5BLa5xUcXTfNDI9OGhmofclg/exec'
+const CAREER_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzuXmKsYoHfQOF_r9OL0W5m1PC6nC2CFMufhQgD0_tlVvokTMEZdvz_0gcDqn30oi9u/exec'
 
 // File upload API endpoint
 const UPLOAD_RESUME_API = '/api/upload-resume'
@@ -252,11 +253,10 @@ export function OpenPositions() {
             <button
               key={dept}
               onClick={() => setActiveDepartment(dept)}
-              className={`w-full md:w-auto px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
-                activeDepartment === dept
+              className={`w-full md:w-auto px-5 py-2.5 rounded-full text-sm font-medium transition-all ${activeDepartment === dept
                   ? "bg-[#1a1a1a] text-white"
                   : "bg-white text-[#1a1a1a]/60 hover:bg-[#1a1a1a]/5 hover:text-[#1a1a1a] border border-[#1a1a1a]/10"
-              }`}
+                }`}
             >
               {dept}
             </button>
@@ -358,8 +358,8 @@ export function OpenPositions() {
       </div>
 
       {/* Job Details & Application Modal */}
-      <Dialog 
-        open={!!selectedPosition} 
+      <Dialog
+        open={!!selectedPosition}
         onOpenChange={(open) => {
           if (!open) {
             setSelectedPosition(null)
@@ -408,7 +408,7 @@ export function OpenPositions() {
                   <h3 className="font-semibold text-lg mb-2 text-[#1a1a1a]">Short Description</h3>
                   <p className="text-[#1a1a1a]/70">{selectedPosition.description}</p>
                 </div>
-                
+
                 {selectedPosition.fullDescription && (
                   <div>
                     <h3 className="font-semibold text-lg mb-2 text-[#1a1a1a]">Description</h3>
@@ -426,11 +426,11 @@ export function OpenPositions() {
                 {/* Application Form */}
                 <div className="border-t pt-6 mt-6">
                   <h3 className="font-semibold text-xl mb-6 text-[#1a1a1a]">Apply for this Position</h3>
-                  
+
                   <form
                     onSubmit={async (e) => {
                       e.preventDefault()
-                      
+
                       // Validate file before submission
                       if (!formData.resume) {
                         setFileError('Please upload your resume')
@@ -498,9 +498,9 @@ export function OpenPositions() {
                           body: formDataToSend.toString(),
                         })
 
-                        setSubmitStatus({ 
-                          type: 'success', 
-                          message: 'Application submitted successfully! We will get back to you soon.' 
+                        setSubmitStatus({
+                          type: 'success',
+                          message: 'Application submitted successfully! We will get back to you soon.'
                         })
 
                         // Reset form
@@ -526,9 +526,9 @@ export function OpenPositions() {
 
                       } catch (error) {
                         console.error('Error submitting form:', error)
-                        setSubmitStatus({ 
-                          type: 'error', 
-                          message: 'Failed to submit application. Please try again later.' 
+                        setSubmitStatus({
+                          type: 'error',
+                          message: 'Failed to submit application. Please try again later.'
                         })
                       } finally {
                         setIsSubmitting(false)
@@ -549,7 +549,7 @@ export function OpenPositions() {
                           <SelectValue placeholder="Select your department" />
                         </SelectTrigger>
                         <SelectContent>
-                          
+
                           <SelectItem value="Social Media Marketing">Social Media Marketing</SelectItem>
                           <SelectItem value="Content Writer">Content Writer</SelectItem>
                           <SelectItem value="Graphic Design">Graphic Design</SelectItem>
@@ -712,11 +712,10 @@ export function OpenPositions() {
                     {/* Status Message */}
                     {submitStatus.type && (
                       <div
-                        className={`p-4 rounded-md ${
-                          submitStatus.type === 'success'
+                        className={`p-4 rounded-md ${submitStatus.type === 'success'
                             ? 'bg-green-50 text-green-800 border border-green-200'
                             : 'bg-red-50 text-red-800 border border-red-200'
-                        }`}
+                          }`}
                       >
                         <p className="text-sm font-medium">{submitStatus.message}</p>
                       </div>
@@ -726,11 +725,10 @@ export function OpenPositions() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`w-full px-8 py-4 bg-[#1a1a1a] text-white font-bold rounded-lg transition-all ${
-                        isSubmitting
+                      className={`w-full px-8 py-4 bg-[#1a1a1a] text-white font-bold rounded-lg transition-all ${isSubmitting
                           ? 'opacity-50 cursor-not-allowed'
                           : 'hover:bg-[#00C9A7]'
-                      }`}
+                        }`}
                     >
                       {isSubmitting ? 'Submitting...' : 'Submit Application'}
                     </button>
