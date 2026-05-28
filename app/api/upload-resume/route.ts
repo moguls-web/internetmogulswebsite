@@ -53,8 +53,9 @@ export async function POST(request: NextRequest) {
     const buffer = Buffer.from(bytes)
     await writeFile(filePath, buffer)
 
-    // Generate public URL
-    const publicUrl = `/resumes/${fileName}`
+    // Serve uploaded files via API route; runtime-written files under /public
+    // are not reliably available as static assets in all production setups.
+    const publicUrl = `/api/resumes/${encodeURIComponent(fileName)}`
 
     return NextResponse.json({
       success: true,
