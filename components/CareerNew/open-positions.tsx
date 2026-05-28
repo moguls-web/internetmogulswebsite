@@ -137,7 +137,7 @@ const departmentColors: Record<string, string> = {
 const CAREER_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzuXmKsYoHfQOF_r9OL0W5m1PC6nC2CFMufhQgD0_tlVvokTMEZdvz_0gcDqn30oi9u/exec'
 
 // File upload API endpoint
-const UPLOAD_RESUME_API = '/api/upload-resume'
+const UPLOAD_RESUME_API = '/api/upload-resume/'
 
 // File validation constants
 const MAX_FILE_SIZE = 4 * 1024 * 1024 // 4MB in bytes
@@ -213,8 +213,16 @@ export function OpenPositions() {
     })
 
     if (!response.ok) {
-      const error = await response.json()
-      throw new Error(error.error || 'Failed to upload file')
+      let message = 'Failed to upload file'
+      const contentType = response.headers.get('content-type') || ''
+      if (contentType.includes('application/json')) {
+        const error = await response.json().catch(() => null)
+        message = error?.error || message
+      } else {
+        const text = await response.text().catch(() => '')
+        if (text) message = text
+      }
+      throw new Error(message)
     }
 
     const data = await response.json()
